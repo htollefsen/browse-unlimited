@@ -2,9 +2,9 @@
   "manifest_version": 2,
 
   "name": "Browse Unlimited",
-  "short_name": "B-Unlimited",
+  "short_name": "B Unlimited",
   "description": "Click the icon when your browsing limit is reached",
-  "version": "0.1.4",
+  "version": "0.1.6",
 
   "browser_action": {
     "default_icon": "browse.png",
@@ -12,5 +12,7 @@
     "default_popup": "browse.html"
   },
   "permissions": [ "cookies", "http://*/*", "https://*/*" ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "icons": { "16": "browse.png", "48": "browse.png", "128": "browse.png" }
+
 }

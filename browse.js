@@ -1,3 +1,4 @@
+var debug=true;
 var domains=[
     "aftenposten.no",
     "nytimes.com",
@@ -17,16 +18,19 @@ var domains=[
     "thestar.com"
 ];
 
-$( document ).ready(function() {
+$(document).ready(function(){
+    say('Session started.');
     run();
     finished();
+    gaInit();
+    say('Session ended.');
 });
 
 function run(){
     for (var i = domains.length - 1; i >= 0; i--) {
         chrome.cookies.getAll({domain: domains[i]}, function(cookies) {
-            for (var i in cookies) {
-                removeCookie(cookies[i]);
+            for (var j in cookies) {
+                removeCookie(cookies[j]);
             }
         });
     };
@@ -35,8 +39,30 @@ function run(){
 function removeCookie(cookie) {
     var url = "http" + (cookie.secure ? "s" : "") + "://" + cookie.domain + cookie.path;
     chrome.cookies.remove({"url": url, "name": cookie.name});
+    say('Removing ' + url + '.');
 }
 
 function finished() {
-    document.getElementById('browse-unlimited-loader').innerHTML = "Cleared!";
+    document.getElementById('browse-unlimited-loader').innerHTML = "Ok!";
+}
+
+function gaInit() {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53369842-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = 'https://ssl.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+    say('Tracking pageview');
+}
+
+function say(msg) {
+    debug && console.log(msg);
 }
