@@ -1,0 +1,36 @@
+body {
+    overflow: hidden;
+    margin: 0px;
+    padding: 5px;
+    background: white;
+}
+
+#browse-unlimited-loader {
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    color: #148000;
+}
+
+
+#progress_wrapper {
+    background-color: white;
+    width: 104px;
+    padding: 2px 2px 2px 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: left;
+    border: 1px solid gray;
+}
+
+#progressbar {
+    width: 100px;
+    background-color: gray;
+    border: 1px solid gray;
+    height: 10px;
+}
+
+#indicator {
+    width:0px;
+    background-color: gray;
+    height:10px;
+    margin:0;
+}

@@ -1,4 +1,9 @@
-var debug=false;
+var debug=true;
+var maxprogress = 100;   // total to reach
+var actualprogress = 0;  // current value
+var itv = 0;  // id to setinterval
+var mainId = 'browse-unlimited-loader';
+
 var domains=[
     "aftenposten.no",
     "nytimes.com",
@@ -23,10 +28,21 @@ var domains=[
 ];
 
 $(document).ready(function(){
+    resetElements();
     run();
     finished();
     gaInit();
 });
+
+function addElement(id, parentId) {
+    $( "#" + parentId ).append( "<div id=" + id + "></div>" );
+}
+
+function resetElements() {
+    addElement('progress_wrapper', mainId);
+    addElement('progressbar', 'progress_wrapper');
+    addElement('indicator', 'progressbar');
+}
 
 function run(){
     for (var i = domains.length - 1; i >= 0; i--) {
@@ -35,6 +51,7 @@ function run(){
                 removeCookie(cookies[j]);
             }
         });
+        $("#indicator").animate({ width: (i / domains.length * 100) + "%" });
     };
 }
 
@@ -45,7 +62,7 @@ function removeCookie(cookie) {
 }
 
 function finished() {
-    $('#browse-unlimited-loader').html("Ok!");
+    $('#' + mainId).html("OK!");
 }
 
 function gaInit() {
