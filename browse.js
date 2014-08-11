@@ -1,4 +1,4 @@
-var debug=true;
+var debug=false;
 var domains=[
     "aftenposten.no",
     "nytimes.com",
@@ -15,15 +15,14 @@ var domains=[
     "theglobeandmail.com",
     "journalbroadcastgroup.com",
     "weeklyworldnews.com",
-    "thestar.com"
+    "thestar.com",
+    "arktimes.com"
 ];
 
 $(document).ready(function(){
-    say('Session started.');
     run();
     finished();
     gaInit();
-    say('Session ended.');
 });
 
 function run(){
@@ -43,7 +42,7 @@ function removeCookie(cookie) {
 }
 
 function finished() {
-    document.getElementById('browse-unlimited-loader').innerHTML = "Ok!";
+    $('#browse-unlimited-loader').html("Ok!");
 }
 
 function gaInit() {

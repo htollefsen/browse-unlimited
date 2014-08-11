@@ -4,7 +4,7 @@
   "name": "Browse Unlimited",
   "short_name": "B Unlimited",
   "description": "Click the icon when your browsing limit is reached",
-  "version": "0.1.6",
+  "version": "0.1.8",
 
   "browser_action": {
     "default_icon": "browse.png",
