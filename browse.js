@@ -16,7 +16,10 @@ var domains=[
     "journalbroadcastgroup.com",
     "weeklyworldnews.com",
     "thestar.com",
-    "arktimes.com"
+    "arktimes.com",
+    "usatoday.com",
+    "thesun.co.uk",
+    "mediaweek.co.uk"
 ];
 
 $(document).ready(function(){
