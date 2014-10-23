@@ -6,8 +6,9 @@ body {
 }
 
 #browse-unlimited-loader {
-    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    text-align: center;
     color: #148000;
+    font-weight: bold;
 }
 
 

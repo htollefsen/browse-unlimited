@@ -9,15 +9,12 @@ _gaq.push(['_trackPageview']);
 })();
 
 var debug = false;
-var maxprogress = 100;   // total to reach
-var actualprogress = 0;  // current value
-var itv = 0;  // id to setinterval
 var divId = 'browse-unlimited-loader'; // div id to style
 var confirmationMessage = 'Happy Surfing!'; // onComplete message
+var context = this;
 
 var domains=[
     "aftenposten.no",
-    "nytimes.com",
     "washingtonpost.com",
     "moneyweek.com",
     "dallasnews.com",
@@ -39,9 +36,9 @@ var domains=[
 ];
 
 $(document).ready(function(){
-    resetElements();
-    run();
-    finished();
+    context.resetElements();
+    context.run();
+    context.finished();
 });
 
 function addElement(id, parentId) {
