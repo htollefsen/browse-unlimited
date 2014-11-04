@@ -34,3 +34,5 @@ Click the icon when your browsing limit is reached
 - usatoday.com
 - thesun.co.uk
 - mediaweek.co.uk
+- smh.com
+- smh.com.au

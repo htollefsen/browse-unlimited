@@ -32,7 +32,9 @@ var domains=[
     "arktimes.com",
     "usatoday.com",
     "thesun.co.uk",
-    "mediaweek.co.uk"
+    "mediaweek.co.uk",
+    "smh.com",
+    "smh.com.au"
 ];
 
 $(document).ready(function(){
