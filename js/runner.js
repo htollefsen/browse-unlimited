@@ -1,39 +1,11 @@
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-53369842-1']);
-_gaq.push(['_trackPageview']);
 
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = 'https://ssl.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
 
 var debug = false;
 var divId = 'browse-unlimited-loader'; // div id to style
 var confirmationMessage = 'Happy Surfing!'; // onComplete message
 var context = this;
 
-var domains=[
-    "aftenposten.no",
-    "washingtonpost.com",
-    "moneyweek.com",
-    "dallasnews.com",
-    "newsday.com",
-    "ft.com",
-    "thetimes.co.uk",
-    "thesundaytimes.co.uk",
-    "theonion.com",
-    "courier-journal.com",
-    "fvn.no",
-    "theglobeandmail.com",
-    "journalbroadcastgroup.com",
-    "weeklyworldnews.com",
-    "thestar.com",
-    "arktimes.com",
-    "usatoday.com",
-    "thesun.co.uk",
-    "mediaweek.co.uk"
-];
+
 
 $(document).ready(function(){
     context.resetElements();

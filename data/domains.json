@@ -1,0 +1,109 @@
+{
+    "domains": {
+        "domain": {
+            "name": "Aftenposten",
+            "url": "aftenposten.no",
+            "language": "Norwegian"
+        },
+        "domain": {
+            "name": "",
+            "url": "washingtonpost.com",
+            "language": "English"
+        },
+        "domain": {
+            "name": "",
+            "url": "moneyweek.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "dallasnews.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "newsday.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "ft.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "thetimes.co.uk",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "thesundaytimes.co.uk",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "theonion.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "courier-journal.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "fvn.no",
+            "language": "Norwegian"
+        },
+        "domain": {
+            "name": "",
+            "url": "theglobeandmail.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "journalbroadcastgroup.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "weeklyworldnews.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "thestar.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "arktimes.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "usatoday.com",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "thesun.co.uk",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "mediaweek.co.uk",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "smh.com.au",
+            "language": ""
+        },
+        "domain": {
+            "name": "",
+            "url": "smh.com",
+            "language": ""
+        }
+    }
+}
