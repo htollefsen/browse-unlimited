@@ -1,24 +1,26 @@
-var DomainHandler = new function() {
+$.prototype.DomainHandler = new function() {
 
-    this.getDomains = $.getJSON("/data/domains.json", function(callback){return callback});
+    this.getDomains = $.getJSON("/data/domains.json");
 
-    this.count = this.getDomains().length;
-
+    this.count = this.getDomains.length;
     this.runRemoval = function() {
         for (var i = this.count - 1; i >= 0; i--) {
             details = this.getCollectionDetails(this.getDomains[i].url);
             chrome.cookies.getAll(details, function(cookies) {
+                console.log('Removing cookies');
+                console.log(cookies);
                 this.removeCookies(cookies);
             });
-            this.updateProgress(i, this.count);
+            this.Visual.updateProgress(i, this.count);
         }
     }
-
 
     this.removeCookies = function(cookies) {
         for (var i in cookies) {
             chrome.cookies.remove(this.getCookieDetails(this.createCookieUrl(cookies[i]), cookies[i].name));
-            this.trackEvent('Clearing', 'Cookie', this.createCookieUrl(cookies[i].url));
+            console.log('Remove cookie');
+            console.log(cookies[i]);
+            this.Tracking.trackEvent('Clearing', 'Cookie', this.createCookieUrl(cookies[i].url));
         }
         return true;
     }

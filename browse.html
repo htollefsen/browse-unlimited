@@ -1,21 +1,20 @@
 <html>
 <head>
     <title>Browse Unlimited Extension</title>
-    <link rel="stylesheet" type="text/css" href="css/browse.css">
-    <script src="js/lib/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/browse.css" />
+    <script src="js/lib/jquery-1.10.2.js" />
+    <script src="js/Visuals.js"></script>
+    <script src="js/DomainHandler.js"></script>
+    <script src="js/Tracking.js"></script>
+    <script src="js/Init.js"></script>
 </head>
 <body>
-    <div id="browse-unlimited-loader"></div>
-
-    <script src="js/Visuals.js"></script>
-    <script src="js/Domains.js"></script>
-    <script src="js/Tracking.js"></script>
-    <script type="text/javascript">
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = 'https://ssl.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+    <div id="browse-unlimited-loader">
+        <div id="progress_wrapper">
+            <div id="progressbar">
+                <div id="indicator"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
