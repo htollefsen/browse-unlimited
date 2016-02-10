@@ -34,7 +34,9 @@ var domains=[
     "thesun.co.uk",
     "mediaweek.co.uk",
     "smh.com",
-    "smh.com.au"
+    "smh.com.au",
+    "osloby.no",
+    "japantimes.co.jp"
 ];
 
 $(document).ready(function(){

@@ -1,7 +1,5 @@
 # Browse Unlimited
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/181c5b53-1efb-4c3c-bf06-55e991a0cf7c/big.png)](https://insight.sensiolabs.com/projects/181c5b53-1efb-4c3c-bf06-55e991a0cf7c)
-
 ## Intro
 This extensions makes you able to reset the soft paywall on several newspapers.
 New York Times has a limit of 10 articles per week. By clicking the extensionicon you can reset this counter. This can be done an unlimited amount of times.
@@ -36,3 +34,5 @@ Click the icon when your browsing limit is reached
 - mediaweek.co.uk
 - smh.com
 - smh.com.au
+- osloby.no
+- japantimes.co.jp
