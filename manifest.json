@@ -4,15 +4,31 @@
   "name": "Browse Unlimited",
   "short_name": "Be Unlimited",
   "description": "Click the icon when your browsing limit is reached",
-  "version": "0.2.4",
+  "version": "0.2.5",
+
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
 
   "browser_action": {
     "default_icon": "img/browse.png",
     "default_title": "Browse Unlimited",
     "default_popup": "browse.html"
   },
-  "permissions": [ "cookies", "http://*/*", "https://*/*" ],
+
+  "permissions": [
+    "cookies", "http://*/*", "https://*/*",
+    "storage",
+    "tabs"
+  ],
+
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-  "icons": { "16": "img/browse.png", "48": "img/browse.png", "128": "img/browse.png" }
+
+  "icons": {
+    "16": "img/browse.png",
+    "48": "img/browse.png",
+    "128": "img/browse.png"
+  }
 
 }

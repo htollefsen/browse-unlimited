@@ -1,83 +1,62 @@
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-53369842-1']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = 'https://ssl.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-
-var debug = false;
-var divId = 'browse-unlimited-loader'; // div id to style
-var confirmationMessage = 'Happy Surfing!'; // onComplete message
-var context = this;
-
-var domains=[
-    "aftenposten.no",
-    "washingtonpost.com",
-    "moneyweek.com",
-    "dallasnews.com",
-    "newsday.com",
-    "ft.com",
-    "thetimes.co.uk",
-    "thesundaytimes.co.uk",
-    "theonion.com",
-    "courier-journal.com",
-    "fvn.no",
-    "theglobeandmail.com",
-    "journalbroadcastgroup.com",
-    "weeklyworldnews.com",
-    "thestar.com",
-    "arktimes.com",
-    "usatoday.com",
-    "thesun.co.uk",
-    "mediaweek.co.uk",
-    "smh.com",
-    "smh.com.au",
-    "osloby.no",
-    "japantimes.co.jp"
-];
-
-$(document).ready(function(){
-    context.resetElements();
-    context.run();
-    context.finished();
-});
-
-function addElement(id, parentId) {
-    $( "#" + parentId ).append( "<div id=" + id + "></div>" );
-}
-
-function resetElements() {
-    addElement('progress_wrapper', divId);
-    addElement('progressbar', 'progress_wrapper');
-    addElement('indicator', 'progressbar');
-}
+var divId = 'browse-unlimited-loader', // div id to style
+    confirmationMessage = 'Happy Surfing!'; // onComplete message´
 
 function run(){
-    for (var i = domains.length - 1; i >= 0; i--) {
-        chrome.cookies.getAll({domain: domains[i]}, function(cookies) {
-            for (var j in cookies) {
-                removeCookie(cookies[j]);
-            }
+    // Get sites from json
+    $.getJSON('/data/sites.json', function(settings) {
+        // Loop every domain
+        $.map(settings.domains, function(domain) {
+            // Loop every cookie for that domain
+            chrome.cookies.getAll({domain: domain}, function(cookies) {
+                for (var i in cookies) {
+                    removeCookie(cookies[i]);
+                }
+            });
         });
-        $("#indicator").animate({ width: (i / domains.length * 100) + "%" });
-    };
+    });
+
+    // Check if user has autorefresh option enabled
+    chrome.storage.sync.get({
+        autorefresh: false
+    }, function(items) {
+        if(items.autorefresh) {
+            // Refresh tab
+            chrome.tabs.getSelected(null, function(tab) {
+                var code = 'window.location.reload();';
+                chrome.tabs.executeScript(tab.id, {code: code});
+            });
+        }
+    });
+
+    // Show confirmation message
+    $('#'+divId)
+        .width(105)
+        .html(confirmationMessage);
+
+    _gaq.push(['_trackEvent', 'Clearing', 'Cookie', url]);
 }
 
 function removeCookie(cookie) {
     var url = "http" + (cookie.secure ? "s" : "") + "://" + cookie.domain + cookie.path;
     chrome.cookies.remove({"url": url, "name": cookie.name});
-    _gaq.push(['_trackEvent', 'Clearing', 'Cookie', url]);
-    say('Removing ' + url + '.');
 }
 
-function finished() {
-    $('#' + divId).width( 105 );
-    $('#' + divId).html(confirmationMessage);
-}
+/**
+ * Google Analytics init
+ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-53369842-1']);
+_gaq.push(['_trackPageview']);
 
-function say(msg) {
-    debug && console.log(msg);
-}
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'https://ssl.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+/**
+ * Start when dom has loaded
+ */
+$(document).ready(function(){
+    run();
+});
