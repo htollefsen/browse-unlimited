@@ -1,4 +1,4 @@
-# Browse Unlimited
+# Browse Unlimited [![SensioLabsInsight](https://insight.sensiolabs.com/projects/181c5b53-1efb-4c3c-bf06-55e991a0cf7c/mini.png)](https://insight.sensiolabs.com/projects/181c5b53-1efb-4c3c-bf06-55e991a0cf7c)
 
 ## Intro
 This extensions makes you able to reset the soft paywall on several newspapers.
