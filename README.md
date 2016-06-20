@@ -6,7 +6,7 @@ New York Times has a limit of 10 articles per week. By clicking the extensionico
 If you have any requests, let me know.
 
 ## Installation
-1. [Search it up in Chrome Store](https://chrome.google.com/webstore/search-extensions/browse%20unlimited)
+1. [Search it up in Chrome Store](https://chrome.google.com/webstore/search/browse%20unlimited?_category=extensions)
 2. Click it to install "Browse Unlimited"
 
 ## How to
